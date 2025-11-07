@@ -7,6 +7,10 @@
 4. Questions will be stored with their correct answers
 5. All quiz attempts will be stored to track participation
 
+### Default admin credentials:
+- Username: `admin`
+- Password: `Admin123`
+
 ## Scope
 ### MVP Features
 - Admin Panel
