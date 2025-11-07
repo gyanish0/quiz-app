@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Input, Button, Card } from '@/components/ui';
+import { Input, Button } from '@/components/ui';
 
 const questionTypes = [
     { id: 'MCQ', label: 'Multiple Choice' },
@@ -133,13 +133,18 @@ export default function QuizEditor({ quiz = null }) {
                 <div className="space-y-6">
                     <div className="flex items-center justify-between">
                         <h2 className="text-xl font-medium text-gray-800">Questions</h2>
-                        <Button
-                            type="button"
-                            onClick={addQuestion}
-                            className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 py-2 rounded-lg transition-all"
-                        >
-                            + Add Question
-                        </Button>
+                        {
+                            questions.length === 0 && (
+                                <Button
+                                    type="button"
+                                    onClick={addQuestion}
+                                    className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 py-2 rounded-lg transition-all"
+                                >
+                                    + Add Question
+                                </Button>
+                            )
+                        }
+
                     </div>
 
                     {questions.length === 0 && (
@@ -216,7 +221,7 @@ export default function QuizEditor({ quiz = null }) {
                                     {question.options.map((option, optionIndex) => (
                                         <div
                                             key={optionIndex}
-                                            className="flex items-center gap-2 mb-2"
+                                            className="flex items-center gap-2 mb-2 w-full"
                                         >
                                             <Input
                                                 value={option}
@@ -292,6 +297,15 @@ export default function QuizEditor({ quiz = null }) {
                                         className="rounded-lg border-gray-300 focus:ring-2 focus:ring-indigo-500"
                                     />
                                 )}
+                            </div>
+                            <div className='mt-6 flex justify-end'>
+                                <Button
+                                    type="button"
+                                    onClick={addQuestion}
+                                    className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 py-2 rounded-lg transition-all"
+                                >
+                                    + Add Question
+                                </Button>
                             </div>
                         </div>
                     ))}
