@@ -140,10 +140,6 @@ export default function AdminQuizzes() {
                                         <span className="text-xs text-gray-400 mt-2">Questions</span>
                                     </div>
                                 </div>
-
-                                <div className="mt-4 text-sm text-gray-500">
-                                    {/* You can show more meta here later */}
-                                </div>
                             </div>
 
                             <div className="mt-6 flex items-center justify-between gap-3">
